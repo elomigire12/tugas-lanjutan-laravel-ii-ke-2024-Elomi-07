@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Latihan Generate Random Color</title>
+<body>
+
+    <h1>Tugas Lanjutan JavaScript</h1>
+
+    <button>Generate</button>
+    <script>
+        const button = document.querySelector('button');
+        const h1 = document.querySelector('h1');
+
+        button.addEventListener('click', () =>{
+            const newColor = generateRandomColor();
+            document.body.style.backgroundColor =newColor;
+            h1.innerText =newColor;
+
+        });
+        const makeRandColor = () => {
+            const r = Math.floor(Math.random() * 255)
+            const g = Math.floor(Math.random() * 255)
+            const b = Math.floor(Math.random() * 255)
+
+            return `rgb(${r},${g},${b})`
+        };
+        setInterval(() => {
+        document.body.style.backgroundColor = makeRandColor();
+    },1000)
+
+     
+
+    </script>
+
+</body>
+
+</html>
